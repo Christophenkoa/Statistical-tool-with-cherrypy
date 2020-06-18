@@ -9,5 +9,5 @@ $ python3 setup.py install
 
 2) launch first script
 
-python -m cherrypy.tutorial.tut01_helloworld
+python3 -m cherrypy.tutorial.tut01_helloworld
 
