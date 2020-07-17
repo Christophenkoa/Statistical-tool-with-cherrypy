@@ -1,6 +1,5 @@
 """
 Tutorial - Hello World
-
 The most basic (working) CherryPy application possible.
 """
 
@@ -57,15 +56,29 @@ class HelloWorld:
 
     # @cherrypy.expose
     # def index(self):
-    #     a = [1, 4, 6]
-    #     b = [1, 2, 3] 
-
-    #     data = np.array([a, b])
-    #     covMatrix = np.cov(data,bias=False)
-    #     correlation = np.corrcoef(a,b)
-    #     df = pd.DataFrame(covMatrix, index=['row_1', 'row_2'], columns=['col_1', 'col_2'])
-    #     x = df.to_json(orient='index')
-    #     return("Covariance matrix of x: \n", x)
+    #     import pandas as pd 
+  
+    #     # list  1 
+    #     a = [2, 3, 2.7, 3.2, 4.1] 
+        
+    #     # list 2 
+    #     b = [10, 14, 12, 15, 20] 
+        
+    #     # storing average of a 
+    #     av_a = sum(a)/len(a) 
+        
+    #     # storing average of b 
+    #     av_b = sum(b)/len(b) 
+        
+    #     # making series from list a 
+    #     a = pd.Series(a) 
+        
+    #     # making series from list b 
+    #     b = pd.Series(b) 
+            
+    #     # covariance through pandas method 
+    #     covar = a.cov(b) 
+    #     return("Results from Pandas method: %s"  % covar)
 
     
     # @cherrypy.expose
@@ -74,10 +87,7 @@ class HelloWorld:
     #     b = [1, 2, 3] 
     #     #Correlation
     #     correlation = np.corrcoef(a,b)
-    #     df = pd.DataFrame(correlation, index=['row_1', 'row_2'], columns=['col_1', 'col_2'])
-    #     x = df.to_json(orient='index')
-
-    #     return("The correlation coefficient is: ", x)
+    #     return("The correlation coefficient is: %s" % correlation[0,1])
 
 tutconf = os.path.join(os.path.dirname(__file__), 'tutorial.conf')
 
