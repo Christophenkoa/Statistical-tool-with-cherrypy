@@ -35,59 +35,106 @@ class HelloWorld:
 #After test comment again and uncoment the next and so on.
 
 
-    # @cherrypy.expose
-    # def index(self):
-    #     # Creating a sample of data 
-    #     sample = [2.74, 1.23, 2.63, 2.22, 3, 1.98]
-    #     # Function will automatically calculate 
-    #     # it's mean and set it as xbar 
-    #     return("Variance of sample set is % s" 
-    #   %(statistics.variance(sample)))
-    
-    # @cherrypy.expose
-    # def index(self):
-    #     # creating a simple data - set 
-    #     sample = [1, 2, 3, 4, 5] 
-  
-    #     # Prints standard deviation 
-    #     # xbar is set to default value of 1 
-    #     return("Standard Deviation of sample is % s " 
-    #             % (statistics.stdev(sample)))
+    def index(self) :
+        output = '''
+        <!doctype html>
+        <html lang="fr">
+            <head>
+                <meta charset="utf-8">
+                <title>Titre de la page</title>
+            </head>
+            <body style="background-color:blue; color : white; text-align:center;">
+                <div style="font-family: courier;">
+                    <div style="width:80%; margin :auto;">
+                        <h1 style="margin : 50px; font-family: verdana;border: 2px solid powderblue;padding: 30px;"> Welcome to our Home page </h1>
+                        <h2 style="margin : 30px"> Functions Implemented :  </h2>
 
-    # @cherrypy.expose
-    # def index(self):
-    #     import pandas as pd 
+
+                        <a href="variance"> <h4>Variance</h4> </a>
+                        <a href="standardDeviation"> <h4>Standard deviation</h4> </a>
+                        <a href="covariance"> <h4>Covariance</h4> </a>
+                        <a href="correlation"> <h4>Correlation</h4> </a>
+
+
+                    </div>
+                    <style>
+                        .footer {
+                        position: fixed;
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        background-color: green;
+                        color: white;
+                        text-align: center;
+                        padding: 15px;
+                        }
+                    </style>
+
+                    <div class="footer">
+                        <p>Statistical tools : Cloud computing assignment</p>
+                    </div>
+                </div>
+            </body>
+        </html>
+        '''
+        return output
+    index.exposed = True
+
+
+    @cherrypy.expose
+    def variance(self):
+        # Creating a sample of data 
+        sample = [2.74, 1.23, 2.63, 2.22, 3, 1.98]
+        # Function will automatically calculate 
+        # it's mean and set it as xbar 
+        return("<h2>Variance of sample set is : </h2> <h3> %s </h3>" 
+      %(statistics.variance(sample)))
+    
+    @cherrypy.expose
+    def standardDeviation(self):
+        # creating a simple data - set 
+        sample = [1, 2, 3, 4, 5] 
   
-    #     # list  1 
-    #     a = [2, 3, 2.7, 3.2, 4.1] 
+        # Prints standard deviation 
+        # xbar is set to default value of 1
+        # 
+        standardDeviation = (statistics.stdev(sample))
+
+        return("<h2>standard deviation is: </h2> <h3>%s</h3>"  % standardDeviation)
+
+    @cherrypy.expose
+    def covariance(self):
+  
+        # list  1 
+        a = [2, 3, 2.7, 3.2, 4.1] 
         
-    #     # list 2 
-    #     b = [10, 14, 12, 15, 20] 
+        # list 2 
+        b = [10, 14, 12, 15, 20] 
         
-    #     # storing average of a 
-    #     av_a = sum(a)/len(a) 
+        # storing average of a 
+        av_a = sum(a)/len(a) 
         
-    #     # storing average of b 
-    #     av_b = sum(b)/len(b) 
+        # storing average of b 
+        av_b = sum(b)/len(b) 
         
-    #     # making series from list a 
-    #     a = pd.Series(a) 
+        # making series from list a 
+        a = pd.Series(a) 
         
-    #     # making series from list b 
-    #     b = pd.Series(b) 
+        # making series from list b 
+        b = pd.Series(b) 
             
-    #     # covariance through pandas method 
-    #     covar = a.cov(b) 
-    #     return("Results from Pandas method: %s"  % covar)
+        # covariance through pandas method 
+        covar = a.cov(b) 
+        return("<h2>Covariance is:</h2> <h3>%s</h3>"  % covar)
 
     
-    # @cherrypy.expose
-    # def index(self):
-    #     a = [1, 4, 6]
-    #     b = [1, 2, 3] 
-    #     #Correlation
-    #     correlation = np.corrcoef(a,b)
-    #     return("The correlation coefficient is: %s" % correlation[0,1])
+    @cherrypy.expose
+    def correlation(self):
+        a = [1, 4, 6]
+        b = [1, 2, 3] 
+        #Correlation
+        correlation = np.corrcoef(a,b)
+        return("<h2>The correlation coefficient is:</h2> <h3>%s</h3>" % correlation[0,1])
 
 tutconf = os.path.join(os.path.dirname(__file__), 'tutorial.conf')
 
