@@ -41,6 +41,7 @@ class HelloWorld:
         <html lang="fr">
             <head>
                 <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Titre de la page</title>
             </head>
             <body style="background-color:blue; color : white; text-align:center;">
@@ -50,10 +51,10 @@ class HelloWorld:
                         <h2 style="margin : 30px"> Functions Implemented :  </h2>
 
 
-                        <a href="variance"> <h4>Variance</h4> </a>
-                        <a href="standardDeviation"> <h4>Standard deviation</h4> </a>
-                        <a href="covariance"> <h4>Covariance</h4> </a>
-                        <a href="correlation"> <h4>Correlation</h4> </a>
+                        <a href="variance"> <h4><font color = "white">Variance</font></h4> </a>
+                        <a href="standardDeviation"> <h4><font color = "white">Standard deviation</font></h4> </a>
+                        <a href="covariance"> <h4><font color = "white">Covariance</font></h4> </a>
+                        <a href="correlation"> <h4><font color = "white">Correlation</font></h4> </a>
 
 
                     </div>
